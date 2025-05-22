@@ -1,0 +1,43 @@
+services:
+    master1:
+        build:
+            context: .
+        hostname: master1
+        container_name: master1
+        ports:
+            - "8089:8088"
+            - "9871:9870"
+        networks:
+            - my_hadoop_cluster
+    master2:
+        build:
+            context: .
+        hostname: master2
+        container_name: master2
+        ports:
+            - "8090:8088"
+            - "9872:9870"
+        networks:
+            - my_hadoop_cluster
+    master3:
+        build:
+            context: .
+        hostname: master3
+        container_name: master3
+        ports:
+            - "8091:8088"
+            - "9873:9870"
+        networks:
+            - my_hadoop_cluster
+
+    worker:
+        build:
+            context: .
+        hostname: worker
+        container_name: worker
+        networks:
+            - my_hadoop_cluster
+
+networks:
+    my_hadoop_cluster:
+        driver: bridge
