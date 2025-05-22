@@ -1,1 +1,1 @@
-# hadoopProject
+# hadoop High-Availability Cluster
